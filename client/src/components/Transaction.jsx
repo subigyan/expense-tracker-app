@@ -14,9 +14,9 @@ const Transaction = ({ transaction }) => {
                 </span>
                 <button
                     className="delete-btn"
-                    onClick={() => deleteT(transaction.id)}
+                    onClick={() => deleteT(transaction._id)}
                 >
-                    x
+                    X
                 </button>
             </li>
         </>

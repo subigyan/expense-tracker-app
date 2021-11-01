@@ -160,11 +160,11 @@ input[type="number"] {
     margin-bottom: 40px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .list li {
-    width: 300px;
+    width: 200px;
     background-color: #fff;
     box-shadow: var(--box-shadow);
     color: #333;

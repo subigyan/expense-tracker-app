@@ -1,11 +1,17 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function (state, action) {
     switch (action.type) {
+        case "GET":
+            return {
+                ...state,
+                loading: false,
+                transactions: action.payload,
+            };
         case "DELETE":
             return {
                 ...state,
                 transactions: state.transactions.filter(
-                    (transaction) => transaction.id !== action.payload
+                    (transaction) => transaction._id !== action.payload
                 ),
             };
 
@@ -13,6 +19,12 @@ export default function (state, action) {
             return {
                 ...state,
                 transactions: [...state.transactions, action.payload],
+            };
+
+        case "ERROR":
+            return {
+                ...state,
+                error: action.payload,
             };
 
         default:

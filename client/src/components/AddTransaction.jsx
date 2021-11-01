@@ -14,7 +14,6 @@ const AddTransaction = () => {
                 onSubmit={(e) => {
                     e.preventDefault();
                     addT({
-                        id: transactions.length + 1,
                         text: text,
                         amount: +amount,
                     });
