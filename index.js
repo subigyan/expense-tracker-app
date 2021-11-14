@@ -13,7 +13,9 @@ const app = express();
 // app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-if (process.env.NODE_ENV === "development") {
+const environment = process.env.NODE_ENV || "production";
+
+if (environment === "development") {
     app.use(morgan("dev"));
 }
 
@@ -29,4 +31,10 @@ if (process.env.NODE_ENV == "production") {
 } else {
 }
 
-app.listen(PORT, () => console.log(`Server is running on port ${PORT}`.blue));
+app.listen(PORT, () =>
+    console.log(
+        `${
+            environment == "production" ? "APP" : "Server"
+        } is running on port ${PORT}`.blue
+    )
+);
